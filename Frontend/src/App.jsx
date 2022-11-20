@@ -9,6 +9,7 @@ import { Product } from "./Components/Product/Product";
 import { Women } from "./Components/Product/Women";
 import { ProductDetails } from "./Components/Product/ProductDetails";
 import { Cart } from "./Components/Cart/Cart";
+import { Successful } from "./Components/Page/Successful";
 
 function App() {
   return (
@@ -29,8 +30,9 @@ function App() {
         <Route path="/newarrivals" element={<NewArrivals />}></Route>
         <Route path="/help" element={<Help />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/singup" element={<Signup />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/cart/suc" element={<Successful />}></Route>
       </Routes>
     </div>
   );
