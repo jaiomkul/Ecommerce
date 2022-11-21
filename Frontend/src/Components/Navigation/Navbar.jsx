@@ -9,10 +9,10 @@ export const Navbar = () => {
   };
   const nav = [
     { title: "Home", to: "/" },
-    { title: "Men", to: "men" },
-    { title: "Women", to: "women" },
-    { title: "New Arrivals", to: "newarrivals" },
-    { title: "Help", to: "help" },
+    { title: "Men", to: "/men" },
+    { title: "Women", to: "/women" },
+    { title: "New Arrivals", to: "/newarrivals" },
+    { title: "Help", to: "/help" },
   ];
 
   return (
