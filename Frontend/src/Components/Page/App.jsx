@@ -10,6 +10,7 @@ import { Women } from "./Components/Product/Women";
 import { ProductDetails } from "./Components/Product/ProductDetails";
 import { Cart } from "./Components/Cart/Cart";
 import { Successful } from "./Components/Page/Successful";
+import { RequiredAuth } from "./Components/RequiredAuth/RequiredAuth";
 
 function App() {
   return (
@@ -32,7 +33,14 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/singup" element={<Signup />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
-        <Route path="/cart/suc" element={<Successful />}></Route>
+        <Route
+          path="/cart/suc"
+          element={
+            <RequiredAuth>
+              <Successful />
+            </RequiredAuth>
+          }
+        ></Route>
       </Routes>
     </div>
   );

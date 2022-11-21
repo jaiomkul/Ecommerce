@@ -1,6 +1,15 @@
 import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  let navigate = useNavigate();
+  let location = useLocation();
+  let tokenVal = "abcSampleToken";
+  const login = () => {
+    localStorage.setItem("token", tokenVal);
+    console.log(location.state.from);
+    navigate(location.state.from.pathname || "/");
+  };
   return (
     <div className="">
       <div className="w-full max-w-xs m-auto pt-10">
@@ -14,6 +23,7 @@ const Login = () => {
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="username"
               type="text"
               placeholder="Username"
             />
@@ -27,6 +37,8 @@ const Login = () => {
             </label>
             <input
               className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              id="password"
+              type="password"
               placeholder="******************"
             />
             <p className="text-red-500 text-xs italic">
@@ -37,6 +49,7 @@ const Login = () => {
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
+              onClick={login}
             >
               Sign In
             </button>
