@@ -1,6 +1,15 @@
 import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  let navigate = useNavigate();
+  let location = useLocation();
+  let tokenVal = "abcSampleToken";
+  const login = () => {
+    localStorage.setItem("token", tokenVal);
+    console.log(location.state.from);
+    navigate(location.state.from.pathname || "/");
+  };
   return (
     <div className="">
       <div className="w-full max-w-xs m-auto pt-10">
@@ -40,8 +49,9 @@ const Login = () => {
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
+              onClick={login}
             >
-              Sign In
+              Log In
             </button>
             <a
               className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
@@ -51,9 +61,6 @@ const Login = () => {
             </a>
           </div>
         </form>
-        <p className="text-center text-gray-500 text-xs">
-          &copy;2020 Acme Corp. All rights reserved.
-        </p>
       </div>
     </div>
   );
