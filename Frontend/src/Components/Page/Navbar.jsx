@@ -1,12 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
-  let token = localStorage.getItem("token");
-
-  const logout = () => {
-    localStorage.removeItem("token");
-  };
   const nav = [
     { title: "Home", to: "/" },
     { title: "Men", to: "men" },
@@ -58,23 +52,14 @@ export const Navbar = () => {
                 SignUp
               </Link>
             </li>
-
-            {!!token ? (
-              <li className="sm:inline-block" onClick={logout}>
-                <Link className="p-5 hover:bg-white hover:text-blue-600/100">
-                  LogOut
-                </Link>
-              </li>
-            ) : (
-              <li className="sm:inline-block">
-                <Link
-                  to="/login"
-                  className="p-5 hover:bg-white hover:text-blue-600/100"
-                >
-                  LogIn
-                </Link>
-              </li>
-            )}
+            <li className="sm:inline-block">
+              <Link
+                to="/login"
+                className="p-5 hover:bg-white hover:text-blue-600/100"
+              >
+                LogIn
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
