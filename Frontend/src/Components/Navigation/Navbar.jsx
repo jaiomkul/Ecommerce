@@ -9,10 +9,10 @@ export const Navbar = () => {
   };
   const nav = [
     { title: "Home", to: "/" },
-    { title: "Men", to: "/men" },
-    { title: "Women", to: "/women" },
-    { title: "New Arrivals", to: "/newarrivals" },
-    { title: "Help", to: "/help" },
+    { title: "Men", to: "men" },
+    { title: "Women", to: "women" },
+    { title: "New Arrivals", to: "newarrivals" },
+    { title: "Help", to: "help" },
   ];
 
   return (
@@ -55,14 +55,17 @@ export const Navbar = () => {
                 to="singup"
                 className="p-5 hover:bg-white hover:text-blue-600/100"
               >
-                SignUp
+                Signup
               </Link>
             </li>
 
             {!!token ? (
               <li className="sm:inline-block" onClick={logout}>
-                <Link className="p-5 hover:bg-white hover:text-blue-600/100">
-                  LogOut
+                <Link
+                  to="/login"
+                  className="p-5 hover:bg-white hover:text-blue-600/100"
+                >
+                  Logout
                 </Link>
               </li>
             ) : (
@@ -71,7 +74,7 @@ export const Navbar = () => {
                   to="/login"
                   className="p-5 hover:bg-white hover:text-blue-600/100"
                 >
-                  LogIn
+                  Login
                 </Link>
               </li>
             )}

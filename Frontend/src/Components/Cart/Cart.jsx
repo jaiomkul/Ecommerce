@@ -15,6 +15,8 @@ export const Cart = () => {
               className="flex mx-11 my-3 box-conten border-2 border-indigo-200 rounded-md p-2"
               key={index}
             >
+              {localStorage.setItem("history", JSON.stringify(item))}
+
               <div className="mr-10">
                 <img
                   className="rounded-md object-fill h-40 w-40"
