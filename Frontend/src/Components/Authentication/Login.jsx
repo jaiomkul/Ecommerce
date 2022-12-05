@@ -20,7 +20,7 @@ const Login = () => {
   function handleSubmit(e) {
     e.preventDefault();
     axios
-      .post("https://ecommerce-pink.herokuapp.com/api/auth", user)
+      .post("https://do-server-production.up.railway.app/api/auth", user)
       .then(function (response) {
         localStorage.setItem("token", response.data.data);
         navigate("/cart");

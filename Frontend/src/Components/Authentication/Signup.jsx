@@ -23,7 +23,7 @@ export const Signup = () => {
   function handleSubmit(e) {
     e.preventDefault();
     axios
-      .post("https://ecommerce-pink.herokuapp.com/api/users1", user)
+      .post("https://do-server-production.up.railway.app/api/users1", user)
       .then(function (response) {
         navigate("/login");
         console.log(response);
